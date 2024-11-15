@@ -1,0 +1,14 @@
+{
+    "values": [
+        "minecraft:elytra",
+        "alexsmobs:tarantula_hawk_elytra",
+        "botania:flight_tiara",
+        "deeperdarker:soul_elytra"
+    ],
+    "remove": [
+        "botania:balance_cloak",
+        "botania:holy_cloak",
+        "botania:invisibility_cloak",
+        "botania:unholy_cloak"
+    ]
+}
