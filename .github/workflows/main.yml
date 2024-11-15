@@ -20,7 +20,7 @@ jobs:
         with:
           draft: false
           prerelease: false
-          name: Release ${{ steps.tag.output.tag }}
-          artifacts: puppies-delight-tweaks-${{ steps.tag.output.tag }}.zip
+          name: Release ${{ steps.tag.outputs.tag }}
+          artifacts: puppies-delight-tweaks-${{ steps.tag.outputs.tag }}.zip
           artifactContentType: application/gzip
 
