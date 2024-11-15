@@ -8,15 +8,17 @@ jobs:
   package:
     runs-on: ubuntu-latest
     steps:
+      - uses: little-core-labs/get-git-tag@v3.0.2
+        id: tag
       - uses: actions/checkout@v4
       - uses: montudor/action-zip@v1
         with:
-          args: zip -r puppies-delight-tweaks-${{ github.ref }}.zip data pack.mcmeta
+          args: zip -r puppies-delight-tweaks-${{ steps.tag.outputs.tag }}.zip data pack.mcmeta
       - uses: actions/create-release@v1
         with:
           draft: false
           prerelease: false
-          name: Release ${{ github.ref }}
-          artifacts: puppies-delight-tweaks-${{ github.ref }}.zip
+          name: Release ${{ steps.tag.output.tag }}
+          artifacts: puppies-delight-tweaks-${{ steps.tag.output.tag }}.zip
           artifactContentType: application/gzip
 
